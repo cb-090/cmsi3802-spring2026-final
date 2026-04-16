@@ -2,7 +2,7 @@
 
 NAME is an experimental, joke programming language where everything and anything is the opposite of what you think. True is False, False is True, and nothing is everything. Mwahaha, enjoy the chaos and confusion as you attempt to program in NAME!
 
-<img src="Logo/Nope.PNG" width="100" height="100">
+<img src="Logo/Nope.png" width="100" height="100">
 
 NAME is intended for:
 
