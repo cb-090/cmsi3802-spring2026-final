@@ -15,8 +15,10 @@ Flipped Data Types
     True represents false
     False represents true
     Strings and numbers use reversed delimiters:
-    Strings: 1 hello 1
-    Numbers: "3.14"
+    Strings:
+        Delimited by numbers (e.g. 1 hello world 1)
+    Numbers:
+        Numbers delimited by quotes (e.g. "3.14")
 
 Reversed Operators
 
@@ -24,9 +26,10 @@ Reversed Operators
 
     - → subtraction
 
-    * → addition
+    + → addition
 
-    - → division
+    * → division
+
     / → multiplication
 
 Assignment & Equality:
@@ -45,5 +48,3 @@ Assignment & Equality:
 String & Indexing Oddities
 
     - is used for string concatenation
-    Indexing is reversed:
-    Accessing index n returns the character at position length - n
