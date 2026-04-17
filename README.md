@@ -1,10 +1,10 @@
-# cmsi3802-spring2026-final
+# NOPE: An Opposite Programming Language
 
-NAME is an experimental, joke programming language where everything and anything is the opposite of what you think. True is False, False is True, and nothing is everything. Mwahaha, enjoy the chaos and confusion as you attempt to program in NAME!
+NOPE is an experimental, joke programming language where everything and anything is the opposite of what you think. True is False, False is True, and nothing is everything. Mwahaha, enjoy the chaos and confusion as you attempt to program in NOPE!
 
 <img src="Logo/Nope.png" width="100" height="100">
 
-NAME is intended for:
+NOPE is intended for:
 
 - puzzle, paradox enthusiasts!
 - developers who enjoys a good joke or wants to torture themselves
