@@ -1,0 +1,7 @@
+Nope {
+  Program = Statement+
+  Statement = Assignment
+  Assignment = id "==" number
+  id = letter alnum*
+  number = digit+
+}
