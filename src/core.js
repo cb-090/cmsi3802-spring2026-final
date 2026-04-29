@@ -16,3 +16,11 @@ export class NumberLiteral {
     this.value = value
   }
 }
+
+export class BinaryExpression {
+  constructor(operator, left, right) {
+    this.operator = operator
+    this.left = left
+    this.right = right
+  }
+}

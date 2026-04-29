@@ -1,7 +1,22 @@
 Nope {
   Program = Statement+
   Statement = Assignment
-  Assignment = id "==" number
+  Assignment = id "==" Exp
+
+  Exp = Equality
+
+  Equality = Equality "=" AddExp  --binary
+           | AddExp
+
+  AddExp = AddExp ("+" | "-") MulExp  --binary
+         | MulExp
+
+  MulExp = MulExp ("*" | "/") Factor  --binary
+         | Factor
+
+  Factor = "(" Exp ")"  --parens
+         | number
+
   id = letter alnum*
   number = digit+
 }
