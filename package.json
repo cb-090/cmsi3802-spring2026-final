@@ -3,9 +3,30 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "node --test"
+    "test": "c8 node --test test/**/*.test.js"
   },
+  "homepage": "",
   "dependencies": {
-    "ohm-js": "^17.0.0"
+    "graph-stringify": "^1.1.0",
+    "ohm-js": "^17.5.0"
+  },
+  "description": "NOPE is an experimental, joke programming language where everything and anything is the opposite of what you think. True is False, False is True, and nothing is everything. Mwahaha, enjoy the chaos and confusion as you attempt to program in NOPE!",
+  "main": "nope.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com"
+  },
+  
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^3.1.1",
+    "c8": "^10.1.3"
   }
 }
