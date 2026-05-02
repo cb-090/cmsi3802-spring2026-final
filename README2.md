@@ -24,7 +24,7 @@ NOPE is built on one core idea:
 
 > Everything is reversed.
 
-### 🔁 Execution Model
+### Execution Model
 - Execution starts from the **last line** and moves upward  
 - Blocks are reversed:
   - `)(` instead of `()`
