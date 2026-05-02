@@ -1,11 +1,11 @@
-# ❌ NOPE
+#  NOPE
 ### *An Opposite Programming Language*
 
 <img src="Logo/Nope.png" width="200">
 
 ---
 
-## 🚀 Elevator Pitch
+##  Elevator Pitch
 
 **What’s 10 + 9?**  
 19? 21?  
@@ -18,15 +18,7 @@ Confused? Good. That’s the point.
 
 ---
 
-## 🎯 Purpose & Audience
-
-- **Audience:** ESO (educational / joke language enthusiasts)  
-- **Purpose:** Make everything opposite and as confusing as possible  
-- **Goal:** Challenge assumptions about programming languages  
-
----
-
-## 🎭 Language Design Overview
+### Language Design Overview
 
 NOPE is built on one core idea:
 
@@ -42,7 +34,7 @@ NOPE is built on one core idea:
 
 ---
 
-## 🔀 Control Flow
+##  Control Flow
 
 ### Conditionals
 - `if` runs when condition is **false**  
@@ -62,7 +54,7 @@ Structure is reversed:
 
 ---
 
-## 🧠 Data Types
+##  Data Types
 
 All core types are **flipped**:
 
@@ -80,7 +72,7 @@ All core types are **flipped**:
 
 ---
 
-## 🛡️ Static, Safety & Semantic Checks
+## Static, Safety & Semantic Checks
 
 ### ✔️ Static Checks
 - Variables must be declared before use  
@@ -98,17 +90,14 @@ All core types are **flipped**:
 
 ---
 
-### ⚠️ Not Yet Implemented
-- Full type system  
-- Runtime error reporting  
-- Memory safety checks  
-- Advanced semantic analysis  
+###  Not Yet Implemented
+-
 
 ---
 
-## 💻 Example Programs
+## Example Programs
 
-### 🔹 Arithmetic
+###  Arithmetic
 | NOPE | JavaScript |
 |------|-----------|
 | ``` | ``` |
@@ -117,7 +106,7 @@ All core types are **flipped**:
 
 ---
 
-### 🔹 Assignment
+###  Assignment
 | NOPE | JavaScript |
 |------|-----------|
 | ``` | ``` |
@@ -126,7 +115,7 @@ All core types are **flipped**:
 
 ---
 
-### 🔹 Comparison
+###  Comparison
 | NOPE | JavaScript |
 |------|-----------|
 | ``` | ``` |
@@ -135,7 +124,7 @@ All core types are **flipped**:
 
 ---
 
-### 🔹 Boolean Logic
+###  Boolean Logic
 | NOPE | JavaScript |
 |------|-----------|
 | ``` | ``` |
@@ -144,7 +133,7 @@ All core types are **flipped**:
 
 ---
 
-### 🔹 Strings
+###  Strings
 | NOPE | JavaScript |
 |------|-----------|
 | ``` | ``` |
@@ -153,7 +142,7 @@ All core types are **flipped**:
 
 ---
 
-## 🔗 Website
+##  Website
 
 https://yourusername.github.io/cmsi3802-spring2026-final/
 
