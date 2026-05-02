@@ -144,7 +144,7 @@ All core types are **flipped**:
 
 ##  Website
 
-https://yourusername.github.io/cmsi3802-spring2026-final/
+http://127.0.0.1:5500/docs/index.html
 
 ---
 
