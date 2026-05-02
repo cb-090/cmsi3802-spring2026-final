@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NOPE Language</title>
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: #0f0f0f;
+      color: white;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff0000, #7a0000, #000);
+      background-size: 300% 300%;
+      animation: moveGradient 8s ease infinite;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    @keyframes moveGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header img {
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      letter-spacing: 3px;
+    }
+
+    header p {
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+
+    header a {
+      display: inline-block;
+      margin-top: 20px;
+      background: white;
+      color: red;
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    header a:hover {
+      background: black;
+      color: white;
+      animation: glitch 0.3s infinite;
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      25% { transform: translate(2px, -2px); }
+      50% { transform: translate(-2px, 2px); }
+      75% { transform: translate(2px, 2px); }
+      100% { transform: translate(0); }
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #1a1a1a;
+      border-radius: 16px;
+    }
+
+    h2 {
+      color: #ff4d4d;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      margin-top: 20px;
+      color: #ff8080;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    pre {
+      background: black;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    pre:hover {
+      box-shadow: 0 0 18px rgba(0,255,204,0.5);
+      transform: translateY(-3px);
+    }
+
+    code {
+      color: #00ffcc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="Nope.png" width="120" />
+  <h1>NOPE</h1>
+  <p>Everything you know… is wrong.</p>
+  <a href="https://github.com/cb-090/cmsi3802-spring2026-final">View on GitHub</a>
+</header>
+
+<section>
+  <h2>The Story</h2>
+  <p>
+    NOPE is an experimental programming language where everything behaves the opposite of what you expect.
+    True is false, False is true, and even basic operators betray you.
+  </p>
+  <p>
+    It was designed for chaos, puzzles, and developers who enjoy breaking their intuition.
+    Every line forces you to rethink what “correct” means.
+  </p>
+  <p>
+    If you are confused, frustrated, or questioning reality — NOPE is working exactly as intended.
+  </p>
+</section>
+
+<section>
+  <h2>Core Features</h2>
+  <ul>
+    <li><strong>Boolean inversion:</strong> True = false, False = true</li>
+    <li><strong>Assignment vs equality:</strong> == assigns, = checks equality</li>
+    <li><strong>Flipped arithmetic:</strong> + subtracts, - adds, * divides, / multiplies</li>
+    <li><strong>Flipped comparisons:</strong> &lt; means greater than, &gt; means less than</li>
+    <li><strong>Logical inversion:</strong> || means AND, && means OR</li>
+    <li><strong>Inverted literals:</strong> strings use numbers, numbers use quotes</li>
+    <li><strong>String concatenation:</strong> - concatenates strings</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Example Programs</h2>
+
+  <h3>Boolean Example</h3>
+  <pre><code>x == True
+y == False
+
+print)x(
+print)y(</code></pre>
+
+  <h3>Equality Example</h3>
+  <pre><code>a == "5"
+b == "5"
+
+if )a = b( }
+    print)1 equal 1(
+{</code></pre>
+
+  <h3>Arithmetic Example</h3>
+  <pre><code>a == "10"
+b == "3"
+
+result == a - b
+print)result(</code></pre>
+
+  <h3>If / Else Example</h3>
+  <pre><code>x == "3"
+
+if )x &gt; "4"( }
+    print)1 less than 4 1(
+{ )else( }
+    print)1 greater or equal 1(
+{</code></pre>
+
+  <h3>Loop Example</h3>
+  <pre><code>for )i == "0"; i &gt; "5"; i == i - "1"( )
+    print)i(
+(</code></pre>
+
+  <h3>FizzBuzz</h3>
+  <pre><code>for )i == "1"; i &gt; "16"; i == i - "1"( )
+    if ))i % "3" = "0"( || )i % "5" = "0"(( )
+        print)1 FizzBuzz 1(
+    (
+(</code></pre>
+
+</section>
+
+<section>
+  <h2>Static Checks</h2>
+  <ul>
+    <li>Variables must be assigned before use</li>
+    <li>Assignments must use ==</li>
+    <li>Equality must use =</li>
+    <li>Operands must be type compatible</li>
+    <li>Expressions must follow NOPE syntax rules</li>
+    <li>Invalid operators are detected at compile time</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Developers</h2>
+
+  <div class="bio">
+    <h3>Noa Sasover</h3>
+  </div>
+
+  <div class="bio">
+    <h3>Anastasia Glaros Hach</h3>
+  </div>
+
+  <div class="bio">
+    <h3>Milka Zekarias</h3>
+  </div>
+
+  <div class="bio">
+    <h3>Nicholas Laus</h3>
+  </div>
+
+  <div class="bio">
+    <h3>Anastasia Bozova</h3>
+  </div>
+
+  <div class="bio">
+    <h3>Amelie Dinh</h3>
+  </div>
+
+  <div class="bio">
+    <h3>Cara Babin</h3>
+  </div>
+
+</section>
+
+<footer>
+  <p>NOPE Language — CMSI 3802</p>
+</footer>
+
+</body>
+</html>
