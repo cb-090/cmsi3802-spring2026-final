@@ -45,8 +45,8 @@ Assignment & Equality:
     > Logic:
     > && → OR
     > || → AND
-    > ! → no operation (does nothing)
+    > ! → !
 
-String & Indexing Oddities
+String Oddities
 
     - is used for string concatenation
