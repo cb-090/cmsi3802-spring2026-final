@@ -1,4 +1,4 @@
-# ❌ NOPE (ETISOPPO)
+# ❌ NOPE
 ### *An Opposite Programming Language*
 
 <img src="Logo/Nope.png" width="200">
