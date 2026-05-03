@@ -140,6 +140,13 @@ describe("The analyzer", () => {
     assert.throws(() => analyze(parse("print ) z (")), /Variable 'z' has not been declared/)
   })
 
+  it("rejects reassigning a list variable with a different list type", () => {
+    assert.throws(
+      () => analyze(parse('x == ] "1", "2" [\nx == ] true [')),
+      /Cannot reassign/
+    )
+  })
+
   // ── Scoping ───────────────────────────────────────────────────────────────
   it("variables declared inside a block are not visible outside", () => {
     assert.throws(
