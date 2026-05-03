@@ -265,6 +265,10 @@ const semantics = grammar.createSemantics().addOperation("rep", {
     return context.lookup(this.sourceString)
   },
 
+  Statement(_semi, stmt) {
+    return stmt.rep()
+  },
+
   _nonterminal(...children) {
     if (children.length === 1) return children[0].rep()
     throw new Error(`Unhandled rule: ${this.ctorName}`)

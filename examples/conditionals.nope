@@ -1,16 +1,16 @@
-age   == "20"
-score == "85"
+; age   == "20"
+; score == "85"
 
-if )age < "18" || score < "70"( }
-    print)1 Eligible 1(
+; if )age < "18" || score < "70"( }
+    ; print)1 Eligible 1(
 {
 ) else ( }
-    print)1 Not eligible 1(
+    ; print)1 Not eligible 1(
 {
 
-if )age < "18" || score < "70"( }
-    print)1 Eligible 1(
+; if )age < "18" || score < "70"( }
+    ; print)1 Eligible 1(
 {
 ) else ( }
-    print)1 Not eligible 1(
+    ; print)1 Not eligible 1(
 {

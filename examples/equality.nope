@@ -1,5 +1,5 @@
-x == "3"
+; x == "3"
 
-if )x = "3"( }
-    print)1 x equals 3 1(
+; if )x = "3"( }
+    ; print)1 x equals 3 1(
 {
