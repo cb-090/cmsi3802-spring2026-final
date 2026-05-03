@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: #0f0f0f;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+header {
+  background: linear-gradient(135deg, #ff0000, #7a0000);
+  text-align: center;
+  padding: 80px 20px;
+}
+
+header img {
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 4rem;
+  letter-spacing: 3px;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+header a {
+  display: inline-block;
+  margin-top: 25px;
+  background: white;
+  color: #ff0000;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+header a:hover {
+  background: #000;
+  color: white;
+  transform: scale(1.05);
+}
+
+section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #1a1a1a;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+  color: #ff4d4d;
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: #ff8080;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+pre {
+  background: #000;
+  padding: 20px;
+  border-radius: 12px;
+  overflow-x: auto;
+  margin-top: 10px;
+  border: 1px solid #333;
+}
+
+code {
+  color: #00ffcc;
+  font-size: 0.95rem;
+}
+
+.bio {
+  background: #2a2a2a;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.bio h3 {
+  font-family: 'Orbitron', sans-serif;  /* 👈 this is what you wanted */
+  letter-spacing: 1px;
+}
+
+.bio:hover {
+  background: #ff0000;
+  transform: translateY(-5px);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header a:hover {
+  background: #000;
+  color: white;
+  transform: scale(1.05);
+  animation: glitchShake 0.3s infinite;
+}
+
+@keyframes glitchShake {
+  0% { transform: translate(0, 0) scale(1.05); }
+  25% { transform: translate(2px, -2px) scale(1.05); }
+  50% { transform: translate(-2px, 2px) scale(1.05); }
+  75% { transform: translate(2px, 2px) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1.05); }
+}
+
+header {
+  background: linear-gradient(135deg, #ff0000, #7a0000, #000000, #ff1a1a);
+  background-size: 300% 300%;
+  animation: moveGradient 8s ease infinite;
+}
+
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+pre {
+  transition: all 0.3s ease;
+}
+
+pre:hover {
+  border-color: #00ffcc;
+  box-shadow: 0 0 18px rgba(0, 255, 204, 0.45);
+  transform: translateY(-3px);
+}
