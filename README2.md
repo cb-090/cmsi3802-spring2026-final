@@ -1,7 +1,7 @@
 #  NOPE
 ### *An Opposite Programming Language*
 
-<img src="Logo/Nope.png" width="200">
+<img src="docs/nope-logo.png" width="200">
 
 ---
 
