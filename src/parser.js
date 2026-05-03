@@ -1,7 +1,7 @@
 import fs from "fs"
 import * as ohm from "ohm-js"
 
-const grammar = ohm.grammar(fs.readFileSync("src/nope.ohm"))
+export const grammar = ohm.grammar(fs.readFileSync("src/nope.ohm"))
 
 export default function parse(sourceCode) {
   const match = grammar.match(sourceCode)
