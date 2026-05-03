@@ -25,7 +25,6 @@ NOPE is built on one core idea:
 > Everything is reversed.
 
 ### Execution Model
-- Execution starts from the **last line** and moves upward  
 - Blocks are reversed:
   - `)(` instead of `()`
   - `}{` instead of `{}`
@@ -43,14 +42,11 @@ NOPE is built on one core idea:
 Structure is reversed:
 - `else` → behaves like `if`  
 - `if` → behaves like `elif`  
-- `elif` → behaves like `else`  
 
 ---
 
 ### Loops
-- `while` exits when condition is **true**  
-- `continue` behaves like `break`  
-- `break` behaves like `continue`  
+- `while` exits when condition is **true**   
 
 ---
 
@@ -60,10 +56,8 @@ All core types are **flipped**:
 
 - Boolean*
 - String
-- Tuple*
-- List*
-- Int*
-- Float*
+- List
+- Int
 
 \* = inverted meaning  
 
