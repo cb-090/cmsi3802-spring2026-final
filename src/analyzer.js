@@ -267,14 +267,17 @@ const semantics = grammar.createSemantics().addOperation("rep", {
 
   _nonterminal(...children) {
     if (children.length === 1) return children[0].rep()
+    /* c8 ignore next */
     throw new Error(`Unhandled rule: ${this.ctorName}`)
   },
 
   _terminal() {
+    /* c8 ignore next */
     return this.sourceString
   },
 
   _iter(...children) {
+    /* c8 ignore next */
     return children.map(c => c.rep())
   },
 })
