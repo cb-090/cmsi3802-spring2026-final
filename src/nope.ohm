@@ -9,7 +9,7 @@ NOPE {
               | ExprStmt
 
 
-  IfStmt      = if ")" Expr "(" Block (else Block)?
+  IfStmt      = if ")" Expr "(" Block (")" else "(" Block)?
   WhileStmt   = while ")" Expr "(" Block
   ForStmt     = for ")" Expr ";" Expr ";" Expr "(" Block  
   PrintStmt   = print ")" Expr "("
@@ -51,27 +51,35 @@ NOPE {
               | Primary
 
   Primary     = ")" Expr "("           -- paren
-              | nopeTrue
-              | nopeFalse
-              | nopeString
-              | nopeNumber
+              | NopeTrue
+              | NopeFalse
+              | NopeList
+              | NopeString
+              | NopeNumber
               | id
 
   // true keyword means false; false keyword means true
-  nopeTrue    = true ~id
-  nopeFalse   = false ~id
+  NopeTrue    = true ~id
+  NopeFalse   = false ~id
 
   // Strings are delimited by integers: 1 hello world 1
-  nopeString  = digit+ (~digit any)* digit+
+  NopeString  = "1" (~"1" any)* "1"    -- one
+            | "2" (~"2" any)* "2"    -- two
+            | "3" (~"3" any)* "3"    -- three
+            | "4" (~"4" any)* "4"    -- four
+            | "5" (~"5" any)* "5"    -- five
+            | "6" (~"6" any)* "6"    -- six
+            | "7" (~"7" any)* "7"    -- seven
+            | "8" (~"8" any)* "8"    -- eight
+            | "9" (~"9" any)* "9"    -- nine  
 
   // Numbers are delimited by double-quotes: "3.14"
-  nopeNumber  = "\"" (digit+ ("." digit+)?) "\""
+  NopeNumber  = "\"" (digit+ ("." digit+)?) "\""
 
-  // Lists/tuples use ] ... ] as delimiters
-  nopeList    = "]" (Expr ("," Expr)*)? "]"
+  // Lists/tuples use ] ... [ as delimiters
+  NopeList    = "]" (Expr ("," Expr)* ","?)? "["
 
   // String concatenation uses - (minus) operator
-  // Semantic pass distinguishes str vs num context
 
   id          = ~keyword letter alnum*
 

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "c8 node --test test/**/*.test.js"
+    "test": "c8 node --test"
   },
   "homepage": "",
   "dependencies": {

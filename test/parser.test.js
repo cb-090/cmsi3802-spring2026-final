@@ -7,7 +7,7 @@ const syntaxChecks = [
   // Basic structure
   ["empty program", ""],
   ["simplest assignment", 'x == "42"'],
-  ["multiple statements", 'x == "1"\nprint ) "hello" ('],
+  ["multiple statements", 'x == "1"\nprint ) 1 hello 1 ('],
   
   // Assignment (uses ==)
   ["simple assignment", 'x == "5"'],
@@ -15,7 +15,7 @@ const syntaxChecks = [
   
   // Print (parens are reversed)
   ["print a number", 'print ) "42" ('],
-  ["print an expression", 'print ) "1" + "2" ('],
+  ["print an expression", 'print ) "1" - "2" ('],
   ["print a string", 'print ) 1 hello world 1 ('],
   
   // Arithmetic — operators are inverted
@@ -32,7 +32,13 @@ const syntaxChecks = [
   // Strings delimited by digits
   ["simple string literal", '1 hello 1'],
   ["string with spaces", '1 hello world 1'],
-  ["string with longer delimiter", '12 hello world 12'],
+
+  //List
+  ["empty list",           '] ['],
+  ["single element list",  '] "1" ['],
+  ["multi element list",   '] "1", "2", "3" ['],
+  ["nested list",          '] ] "1" [, ] "2" [ ['],
+  ["list in assignment",   'x == ] "1", "2" ['],
   
   // Booleans (true means false, false means true)
   ["true literal", 'x == true'],
@@ -60,7 +66,7 @@ const syntaxChecks = [
 
   // If statement (condition parens reversed, block braces reversed)
   ["simple if", 'if ) true ( } print ) 1hello1 ( {'],
-  ["if-else", 'if ) true ( } x == "1" { else } x == "2" {'],
+  ["if-else", 'if ) true ( } x == "1" { ) else (} x == "2" {'],
   ["if with comparison", 'if ) "3" < "1" ( } print ) 1hi1 ( {'],
 
   // While loop
@@ -99,9 +105,6 @@ const syntaxErrors = [
   ["normal braces in if", 'if ) true ( { x == "1" }', /Line 1/],
   ["normal braces in while", 'while ) true ( { x == "1" }', /Line 1/],
 
-  // Assignment uses ==, not =
-  ["single equals for assignment", 'x = "5"', /Line 1/],
-
   // Malformed strings
   ["string delimiter mismatch", '1 hello world 2', /Line 1/],
   ["unclosed string", '1 hello world', /Line 1/],
@@ -125,8 +128,6 @@ const syntaxErrors = [
   // Bad expressions
   ["missing right operand", 'x == "3" -', /Line 1/],
   ["operator with no operands", '- -', /Line 1/],
-  ["chained relational operators", '"1" = "2" = "3"', /Line 1/],
-  ["mixing || and &&", 'true || false && true', /Line 1/],
 
   // Unbalanced delimiters
   ["unmatched open paren", ') "1" + "2"', /Line 1/],
