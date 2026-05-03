@@ -2,6 +2,8 @@
 
 NOPE is an experimental joke language where everything is the opposite of what you expect. `true` is `false`, `false` is `true`, and nothing is everything. Enjoy the chaos!
 
+Built by: Amelie Dinh, 
+
 <img src="Logo/Nope.png" width="100" height="100">
 
 **NOPE is for:**
