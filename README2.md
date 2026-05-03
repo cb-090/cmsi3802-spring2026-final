@@ -12,7 +12,7 @@
 No… **1.**
 
 NOPE is a programming language where everything behaves as the opposite of what you expect.  
-True is False, False is True, addition subtracts, and execution itself runs backwards.
+True is False, False is True, addition subtracts.
 
 Confused? Good. That’s the point.
 
