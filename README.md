@@ -127,3 +127,8 @@ for ) init ; test ; update ( } ... {
 
 [NOPE Language Docs](https://cb-090.github.io/nope/)
 
+---
+
+## Presentation
+
+[NOPE Lightning Talk](https://docs.google.com/presentation/d/1CTGPr-Ckl4NthgDWNBQzU1_XwhXxS1PhuWEoUkvBt3g/edit?usp=sharing)
