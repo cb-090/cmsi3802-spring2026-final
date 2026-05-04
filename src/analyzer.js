@@ -40,7 +40,7 @@ function typesMatch(t1, t2) {
 }
 
 function fmt(type) {
-  if (typeof type === "object" && type?.kind === "ListType") return `list<${fmt(type.baseType)}>`
+  if (typeof type === "object") return `list<${fmt(type.baseType)}>`
   return type
 }
 
@@ -270,19 +270,7 @@ const semantics = grammar.createSemantics().addOperation("rep", {
   },
 
   _nonterminal(...children) {
-    if (children.length === 1) return children[0].rep()
-    /* c8 ignore next */
-    throw new Error(`Unhandled rule: ${this.ctorName}`)
-  },
-
-  _terminal() {
-    /* c8 ignore next */
-    return this.sourceString
-  },
-
-  _iter(...children) {
-    /* c8 ignore next */
-    return children.map(c => c.rep())
+    return children[0].rep()
   },
 })
 
