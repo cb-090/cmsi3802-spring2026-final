@@ -4,10 +4,6 @@ export default function optimize(node) {
   return optimizers?.[node?.kind]?.(node) ?? node
 }
 
-// In NOPE, true means false and false means true
-const isNopeTrue = v => v === false   // NOPE's "true" keyword compiles to JS false
-const isNopeFalse = v => v === true   // NOPE's "false" keyword compiles to JS true
-
 // In NOPE, + means subtract and - means add, so identity/zero rules are swapped:
 //   additive identity: x - 0 → x  becomes  x + 0 → x  (NOPE's - is JS +)
 //   but the IR already stores the swapped JS op, so we check JS ops here.
@@ -31,18 +27,11 @@ const optimizers = {
     }
     return s
   },
-
+  
   IfStatement(s) {
     s.test = optimize(s.test)
     s.consequent = s.consequent.flatMap(optimize)
-    if (s.alternate?.kind?.endsWith?.("IfStatement")) {
-      s.alternate = optimize(s.alternate)
-    } else {
-      s.alternate = s.alternate.flatMap(optimize)
-    }
-    // In NOPE's IR, boolean literals are already JS-flipped:
-    //   NOPE `true`  → JS false  → takes alternate branch
-    //   NOPE `false` → JS true   → takes consequent branch
+    s.alternate = s.alternate.flatMap(optimize)
     if (s.test.constructor === Boolean) {
       return s.test ? s.consequent : s.alternate
     }

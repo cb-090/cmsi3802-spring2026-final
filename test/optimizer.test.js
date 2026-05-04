@@ -104,12 +104,6 @@ describe("IfStatement", () => {
     assert.deepEqual(optimizeStmt(core.ifStatement(false, conseq, [inner])), [])
   })
 
-  it("handles a ShortIfStatement as the alternate (else-if chain)", () => {
-    const elseIf = core.shortIfStatement(bx, conseq)
-    const result = optimizeStmt(core.ifStatement(false, conseq, elseIf))
-    // false → alternate which is the ShortIfStatement node itself
-    assert.equal(result[0]?.kind ?? result?.kind, "ShortIfStatement")
-  })
 })
 
 // ─── ShortIfStatement ────────────────────────────────────────────────────────

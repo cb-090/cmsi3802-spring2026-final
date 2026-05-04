@@ -496,6 +496,22 @@ const fixtures = [
       }
     `,
   },
+{
+    name: "for loop reusing a previously declared variable",
+    // x is declared before the loop, so the for-init should not re-declare with let
+    source: `
+        ; x == "0"
+        ; for )x == "0"; x > "5"; x == x - "1"( }
+        ; print )x(
+        {
+    `,
+    expected: dedent`
+        let x_1 = 0;
+        for (x_1 = 0; (x_1 < 5); x_1 = (x_1 + 1)) {
+        console.log(x_1);
+        }
+    `,
+},
 
   // ── ListExpression ─────────────────────────────────────────────────────────
   {

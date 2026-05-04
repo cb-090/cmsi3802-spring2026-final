@@ -44,14 +44,9 @@ export default function generate(program) {
     IfStatement(s) {
       output.push(`if (${gen(s.test)}) {`)
       s.consequent.forEach(gen)
-      if (s.alternate?.kind?.endsWith?.("IfStatement")) {
-        output.push("} else")
-        gen(s.alternate)
-      } else {
-        output.push("} else {")
-        s.alternate.forEach(gen)
-        output.push("}")
-      }
+      output.push("} else {")
+      s.alternate.forEach(gen)
+      output.push("}")
     },
 
     ShortIfStatement(s) {
