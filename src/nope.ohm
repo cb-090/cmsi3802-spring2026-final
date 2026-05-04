@@ -54,7 +54,6 @@ NOPE {
               | NopeTrue
               | NopeFalse
               | NopeList
-              | NopeTuple
               | NopeString
               | NopeNumber
               | id
@@ -79,7 +78,6 @@ NOPE {
 
   // Lists/tuples use ] ... [ as delimiters
   NopeList    = "]" (Expr ("," Expr)* ","?)? "["
-  NopeTuple    = ")" (Expr ("," Expr)* ","?)? "("
 
   // String concatenation uses - (minus) operator
 
