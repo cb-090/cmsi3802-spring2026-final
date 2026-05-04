@@ -125,5 +125,5 @@ for ) init ; test ; update ( } ... {
 
 ## Website
 
-[NOPE Language Docs](http://127.0.0.1:5500/docs/index.html)
+[NOPE Language Docs](https://cb-090.github.io/nope/)
 
