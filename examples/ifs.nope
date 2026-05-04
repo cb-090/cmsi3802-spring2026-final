@@ -1,7 +1,7 @@
-x == "3"
-if )x > "4"( }        
-    print)1 X is less than 4 1(
+; x == "3"
+; if )x > "4"( }        
+    ; print)1 X is less than 4 1(
 {
 )else ( }
-    print)1 X is 4 or greater 1(
+    ; print)1 X is 4 or greater 1(
 {

@@ -2,11 +2,11 @@
 NOPE {
   Program     = Statement*
 
-  Statement   = IfStmt
-              | WhileStmt
-              | ForStmt
-              | PrintStmt
-              | ExprStmt
+  Statement   = ";" IfStmt
+              | ";" WhileStmt
+              | ";" ForStmt
+              | ";" PrintStmt
+              | ";" ExprStmt
 
 
   IfStmt      = if ")" Expr "(" Block (")" else "(" Block)?
@@ -73,7 +73,7 @@ NOPE {
             | "8" (~"8" any)* "8"    -- eight
             | "9" (~"9" any)* "9"    -- nine  
 
-  // Numbers are delimited by double-quotes: "3.14"
+  // Numbers/floats are delimited by double-quotes: "3.14"
   NopeNumber  = "\"" (digit+ ("." digit+)?) "\""
 
   // Lists/tuples use ] ... [ as delimiters
@@ -81,7 +81,7 @@ NOPE {
 
   // String concatenation uses - (minus) operator
 
-  id          = ~keyword letter alnum*
+  id = ~keyword letter alnum*
 
   // Keywords
   if          = "if" ~alnum
