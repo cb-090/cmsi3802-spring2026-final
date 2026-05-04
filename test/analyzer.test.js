@@ -142,7 +142,7 @@ describe("The analyzer", () => {
 
   it("rejects reassigning a list variable with a different list type", () => {
     assert.throws(
-      () => analyze(parse('x == ] "1", "2" [\nx == ] true [')),
+      () => analyze(parse('; x == ] "1", "2" [\n; x == ] true [')),
       /Cannot reassign/
     )
   })
