@@ -143,12 +143,12 @@
 <section>
   <h2>The Story</h2>
   <p>
-    NOPE is an experimental programming language where everything behaves the opposite of what you expect.
+    NOPE is an experimental esoteric programming language where everything behaves the opposite of what you expect.
     True is false, False is true, and even basic operators betray you.
   </p>
   <p>
-    It was designed for chaos, puzzles, and developers who enjoy breaking their intuition.
-    Every line forces you to rethink what “correct” means.
+    It was designed for pure chaos, puzzles, and developers who enjoy breaking their intuition.
+    Every line forces you to rethink what “correct”, or rather, "incorrect" means.
   </p>
   <p>
     If you are confused, frustrated, or questioning reality — NOPE is working exactly as intended.
@@ -172,47 +172,97 @@
   <h2>Example Programs</h2>
 
   <h3>Boolean Example</h3>
-  <pre><code>x == True
-y == False
+  <pre><code>; x == True
+; y == False
 
-print)x(
-print)y(</code></pre>
+; print)x(
+; print)y(</code></pre>
 
   <h3>Equality Example</h3>
-  <pre><code>a == "5"
-b == "5"
+  <pre><code>; x == "3"
 
-if )a = b( }
-    print)1 equal 1(
+; if )x = "3"( }
+    ; print)1 x equals 3 1(
 {</code></pre>
 
   <h3>Arithmetic Example</h3>
-  <pre><code>a == "10"
-b == "3"
+  <pre><code>; a == "10"
+; b == "3"
 
-result == a - b
-print)result(</code></pre>
+; sum  == a - b 
+; diff == a + b
+; prod == a / b
+; quot == a * b</code></pre>
+
+  <h3>Strings Example</h3>
+  <pre><code>; greeting == 1 hello world 1
+; version  == "3.14"
+
+; print)1 welcome to NOPE 1(
+
+; first == 1 hello 1
+; last  == 1 world 1
+
+; full == first - last
+; print)full(
+
+; msg == 1 NOPE is 1 - 1 pure chaos 1
+; print)msg(
+
+; lang == 1 NOPE 1
+
+; if )lang = 1 NOPE 1( }
+    ; print)1 correct 1(
+{</code></pre>
 
   <h3>If / Else Example</h3>
-  <pre><code>x == "3"
+  <pre><code>; age   == "20"
+; score == "85"
 
-if )x &gt; "4"( }
-    print)1 less than 4 1(
-{ )else( }
-    print)1 greater or equal 1(
+; if )age < "18" || score < "70"( }
+    ; print)1 Eligible 1(
+{
+) else ( }
+    ; print)1 Not eligible 1(
+{
+
+; if )age < "18" || score < "70"( }
+    ; print)1 Eligible 1(
+{
+) else ( }
+    ; print)1 Not eligible 1(
 {</code></pre>
 
   <h3>Loop Example</h3>
-  <pre><code>for )i == "0"; i &gt; "5"; i == i - "1"( )
-    print)i(
-(</code></pre>
+  <pre><code>; for )i == "0"; i > "5"; i == i + "1"( }
+    ; print)i(
+{
+
+; x == "5"
+; while ) x = "0" ( }
+    ; print ) x (
+    ; x == x - "1"
+{</code></pre>
 
   <h3>FizzBuzz</h3>
-  <pre><code>for )i == "1"; i &gt; "16"; i == i - "1"( )
-    if ))i % "3" = "0"( || )i % "5" = "0"(( )
-        print)1 FizzBuzz 1(
-    (
-(</code></pre>
+  <pre><code>; i == "1"
+
+; while )"101" > i( }
+    ; if )i * "3" = "0" && i * "5" = "0"( }
+        ; print)1 FizzBuzz 1(
+    { ) else ( }
+        ; if )i * "3" = "0"( }
+            ; print)1 Fizz 1(
+        { ) else ( }
+            ; if )i * "5" = "0"( }
+                ; print)1 Buzz 1(
+            { ) else ( }
+                ; print)i(
+            {
+        {
+    {
+    ; i == i - "1"
+{</code></pre>
 
 </section>
 
@@ -233,30 +283,37 @@ if )x &gt; "4"( }
 
   <div class="bio">
     <h3>Noa Sasover</h3>
+    <p>Developer - A junior CS major and LMU Water Polo athlete.</p>
   </div>
 
   <div class="bio">
     <h3>Anastasia Glaros Hach</h3>
+    <p>Developer - A junior CS major and Social Media Chair of Ping Pong Club.</p>
   </div>
 
   <div class="bio">
     <h3>Milka Zekarias</h3>
+    <p>Developer - A junior CS major and Vice President of ACM.</p>
   </div>
 
   <div class="bio">
     <h3>Nicholas Laus</h3>
+    <p>Developer - A junior CS major and President of LMU's ISBA Society.</p>
   </div>
 
   <div class="bio">
     <h3>Anastasia Bozova</h3>
+    <p>Developer - A junior CS major and LMU Tennis athlete.</p>
   </div>
 
   <div class="bio">
     <h3>Amelie Dinh</h3>
+    <p>Developer - A junior CS major and Co-President of Run Club.</p>
   </div>
 
   <div class="bio">
     <h3>Cara Babin</h3>
+    <p>Developer - A junior CS major and Marketing Chair of ACM.</p>
   </div>
 
 </section>
