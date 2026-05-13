@@ -48,7 +48,7 @@ const fixtures = [
   {
     name: "print a string literal",
     source: `; print )1hello world1(`,
-    expected: `console.log(hello world);`,
+    expected: `console.log("hello world");`,
   },
   {
     name: "print a variable",
@@ -311,7 +311,7 @@ const fixtures = [
     expected: dedent`
       let x_1 = 0;
       if ((x_1 === 0)) {
-      console.log(yes);
+      console.log("yes");
       }
     `,
   },
@@ -330,9 +330,9 @@ const fixtures = [
     expected: dedent`
       let x_1 = 0;
       if ((x_1 === 0)) {
-      console.log(yes);
+      console.log("yes");
       } else {
-      console.log(no);
+      console.log("no");
       }
     `,
   },
@@ -353,10 +353,10 @@ const fixtures = [
     expected: dedent`
       let x_1 = 1;
       if ((x_1 === 0)) {
-      console.log(a);
+      console.log("a");
       } else {
       if ((x_1 === 1)) {
-      console.log(b);
+      console.log("b");
       }
       }
     `,
@@ -378,12 +378,12 @@ const fixtures = [
     expected: dedent`
       let x_1 = 1;
       if ((x_1 === 0)) {
-      console.log(a);
+      console.log("a");
       } else {
       if ((x_1 === 1)) {
-      console.log(b);
+      console.log("b");
       } else {
-      console.log(c);
+      console.log("c");
       }
       }
     `,
@@ -397,7 +397,7 @@ const fixtures = [
         ; print )1no1(
       {
     `,
-    expected: `console.log(yes);`,
+    expected: `console.log("yes");`,
   },
   {
     name: "optimizer folds constant if test — takes alternate when JS false",
@@ -408,7 +408,7 @@ const fixtures = [
         ; print )1no1(
       {
     `,
-    expected: `console.log(no);`,
+    expected: `console.log("no");`,
   },
 
   // ── WhileStatement ─────────────────────────────────────────────────────────
@@ -544,46 +544,58 @@ const fixtures = [
       console.log(x_1);
     `,
   },
+]
+
+describe("The code generator", () => {
+  for (const fixture of fixtures) {
+    it(`produces expected js output for the ${fixture.name} program`, () => {
+      const actual = generate(optimize(analyze(parse(fixture.source))))
+      assert.deepEqual(actual, fixture.expected)
+    })
+  }
+})
+
+const extraFixtures = [
   // ── Strings ────────────────────────────────────────────────────────────────
   {
     name: "string literal variant 2",
     source: `; print )2hello2(`,
-    expected: `console.log(hello);`,
+    expected: `console.log("hello");`,
   },
   {
     name: "string literal variant 3",
     source: `; print )3hello3(`,
-    expected: `console.log(hello);`,
+    expected: `console.log("hello");`,
   },
   {
     name: "string literal variant 4",
     source: `; print )4hello4(`,
-    expected: `console.log(hello);`,
+    expected: `console.log("hello");`,
   },
   {
     name: "string literal variant 5",
     source: `; print )5hello5(`,
-    expected: `console.log(hello);`,
+    expected: `console.log("hello");`,
   },
   {
     name: "string literal variant 6",
     source: `; print )6hello6(`,
-    expected: `console.log(hello);`,
+    expected: `console.log("hello");`,
   },
   {
     name: "string literal variant 7",
     source: `; print )7hello7(`,
-    expected: `console.log(hello);`,
+    expected: `console.log("hello");`,
   },
   {
     name: "string literal variant 8",
     source: `; print )8hello8(`,
-    expected: `console.log(hello);`,
+    expected: `console.log("hello");`,
   },
   {
     name: "string literal variant 9",
     source: `; print )9hello9(`,
-    expected: `console.log(hello);`,
+    expected: `console.log("hello");`,
   },
   {
     name: "string concatenation (NOPE - means concat for strings)",
@@ -594,15 +606,15 @@ const fixtures = [
       ; print )x - y(
     `,
     expected: dedent`
-      let x_1 = hello;
-      let y_2 = world;
+      let x_1 = "hello";
+      let y_2 = "world";
       console.log((x_1 + y_2));
     `,
   },
   {
     name: "assign string variable",
     source: `; x == 1hello world1`,
-    expected: `let x_1 = hello world;`,
+    expected: `let x_1 = "hello world";`,
   },
   {
     name: "print string variable",
@@ -611,7 +623,7 @@ const fixtures = [
       ; print )x(
     `,
     expected: dedent`
-      let x_1 = goodbye;
+      let x_1 = "goodbye";
       console.log(x_1);
     `,
   },
@@ -778,8 +790,8 @@ const fixtures = [
     expected: dedent`
       let x_1 = 0;
       if ((x_1 === 0)) {
-      console.log(first);
-      console.log(second);
+      console.log("first");
+      console.log("second");
       x_1 = 1;
       }
     `,
@@ -799,10 +811,10 @@ const fixtures = [
     expected: dedent`
       let x_1 = 0;
       if ((x_1 === 0)) {
-      console.log(yes);
+      console.log("yes");
       x_1 = 1;
       } else {
-      console.log(no);
+      console.log("no");
       x_1 = 2;
       }
     `,
@@ -819,7 +831,7 @@ const fixtures = [
     expected: dedent`
       let b_1 = true;
       if (b_1) {
-      console.log(yes);
+      console.log("yes");
       }
     `,
   },
@@ -858,7 +870,7 @@ const fixtures = [
     expected: dedent`
       let done_1 = false;
       while (done_1) {
-      console.log(looping);
+      console.log("looping");
       done_1 = true;
       }
     `,
@@ -950,7 +962,7 @@ const fixtures = [
       let x_1 = 0;
       while ((x_1 < 5)) {
       if ((x_1 === 3)) {
-      console.log(found);
+      console.log("found");
       }
       x_1 = (x_1 + 1);
       }
@@ -974,9 +986,9 @@ const fixtures = [
       let x_1 = 0;
       while ((x_1 < 4)) {
       if ((x_1 > 0)) {
-      console.log(big);
+      console.log("big");
       } else {
-      console.log(small);
+      console.log("small");
       }
       x_1 = (x_1 + 1);
       }
@@ -1032,7 +1044,7 @@ const fixtures = [
   {
     name: "list of strings",
     source: `; x == ]1a1, 1b1, 1c1[`,
-    expected: `let x_1 = [a, b, c];`,
+    expected: `let x_1 = ["a", "b", "c"];`,
   },
   {
     name: "list with optimizer-folded elements",
@@ -1093,7 +1105,7 @@ const fixtures = [
         ; print )1no1(
       {
     `,
-    expected: `console.log(yes);`,
+    expected: `console.log("yes");`,
   },
   {
     name: "optimizer folds comparison to false in if test",
@@ -1105,7 +1117,7 @@ const fixtures = [
         ; print )1no1(
       {
     `,
-    expected: `console.log(no);`,
+    expected: `console.log("no");`,
   },
   {
     name: "optimizer folds arithmetic in for body",
@@ -1203,6 +1215,14 @@ const fixtures = [
   },
   {
     name: "optimizer absorbing rule x * 0",
+    // x * "0" (NOPE * is JS /) — right is 0: x * 0 → 0
+    source: `
+      ; x == "5"
+      ; print )x * "0"(
+    `,
+    // wait: NOPE * → JS /, right constant 0: no absorbing rule for / with 0 on right
+    // Actually the rule is: op "*" isZero(right) → return right (i.e. 0)
+    // But in IR the op is "/" not "*"... let's use NOPE / (JS *) instead
     // NOPE / → JS *; x / "0" → x * 0 → 0
     source: `
       ; x == "5"
@@ -1214,7 +1234,7 @@ const fixtures = [
     `,
   },
   {
-    name: "optimizer multiplicative identity x / 1 → x",
+    name: "optimizer x ** 0 → 1",
     // No ** in NOPE grammar directly, skip — use multiple prints instead
     // Actually NOPE has no ** operator exposed. Use identity rule instead.
     // x / "1" → x * 1 → x (multiplicative identity, right)
@@ -1256,9 +1276,9 @@ const fixtures = [
     expected: dedent`
       for (let i_1 = 0; (i_1 < 3); i_1 = (i_1 + 1)) {
       if ((i_1 === 2)) {
-      console.log(found);
+      console.log("found");
       } else {
-      console.log(nope);
+      console.log("nope");
       }
       }
     `,
@@ -1374,6 +1394,9 @@ const fixtures = [
     source: `; print )) ) "1" - "2" ( - "3" ( - "4"(`,
     expected: `console.log(10);`,
   },
+]
+
+const reuseFixture = [
   {
     name: "for loop reusing a previously declared variable",
     source: `
@@ -1391,8 +1414,17 @@ const fixtures = [
   },
 ]
 
-describe("The code generator", () => {
-  for (const fixture of fixtures) {
+describe("The code generator (reuse)", () => {
+  for (const fixture of reuseFixture) {
+    it(`produces expected js output for the ${fixture.name} program`, () => {
+      const actual = generate(optimize(analyze(parse(fixture.source))))
+      assert.deepEqual(actual, fixture.expected)
+    })
+  }
+})
+
+describe("The code generator (extended)", () => {
+  for (const fixture of extraFixtures) {
     it(`produces expected js output for the ${fixture.name} program`, () => {
       const actual = generate(optimize(analyze(parse(fixture.source))))
       assert.deepEqual(actual, fixture.expected)
