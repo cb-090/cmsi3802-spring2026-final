@@ -112,6 +112,12 @@ for ) init ; test ; update ( } ... {
 
 ---
 
+## Full Grammar
+
+[Ohm](https://github.com/cb-090/nope/blob/main/src/nope.ohm)
+
+---
+
 ## Static, Semantic, & Safety Checks
 
 - Variables must be assigned before use
