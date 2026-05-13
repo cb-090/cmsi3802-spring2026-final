@@ -17,7 +17,7 @@ export default function generate(program) {
     }
   })(new Map())
 
-  const gen = node => generators?.[node?.kind]?.(node) ?? node
+  const gen = node => generators?.[node?.kind]?.(node) ?? (typeof node === "string" ? JSON.stringify(node) : node)
 
   // Tracks which target names have already been declared with `let` so that
   // subsequent assignments to the same variable omit the declaration keyword.
